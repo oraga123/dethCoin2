@@ -217,8 +217,8 @@ const G={
     coinVal: {level:0,baseCost:100,name:'COIN VAL',desc:'コイン倍率UP', icon:'coin'},
     lucky:   {level:0,baseCost:50, name:'FEVER',   desc:'FEVER +1',    icon:'fever'},
   },
-  getAccel(){return 0.02*Math.pow(1.2,this.upgrades.accel.level)},
-  getMaxSpeed(){return 0.2*Math.pow(1.5,this.upgrades.maxSpeed.level)},
+  getAccel(){return 0.02*Math.pow(2,this.upgrades.accel.level)},
+  getMaxSpeed(){return 1*Math.pow(2,this.upgrades.maxSpeed.level)},
   getCoinMult(){return Math.pow(2,this.upgrades.coinVal.level)},
   getCost(k){const u=this.upgrades[k];if(k==='lucky')return Math.floor(u.baseCost*Math.pow(2,this.feverTotalBought));return Math.floor(u.baseCost*Math.pow(2,u.level))},
 };
