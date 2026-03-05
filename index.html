@@ -204,7 +204,7 @@ canvas{display:block}
 const G={
   started:false,ended:false,mode:'room',
   totalSpins:0,targetSpins:10000,
-  timeLimit:300,timeRemaining:300,
+  timeLimit:600,timeRemaining:300,
   coins:0,
   rouletteSpeed:1.5,rouletteAngle:0,totalRotation:0,
   pushing:false,
@@ -217,9 +217,9 @@ const G={
     coinVal: {level:0,baseCost:100,name:'COIN VAL',desc:'コイン倍率UP', icon:'coin'},
     lucky:   {level:0,baseCost:50, name:'FEVER',   desc:'FEVER +1',    icon:'fever'},
   },
-  getAccel(){return 0.02*Math.pow(2,this.upgrades.accel.level)},
-  getMaxSpeed(){return 1*Math.pow(2,this.upgrades.maxSpeed.level)},
-  getCoinMult(){return Math.pow(2,this.upgrades.coinVal.level)},
+  getAccel(){return 0.02*Math.pow(3,this.upgrades.accel.level)},
+  getMaxSpeed(){return 1*Math.pow(3,this.upgrades.maxSpeed.level)},
+  getCoinMult(){return Math.pow(3,this.upgrades.coinVal.level)},
   getCost(k){const u=this.upgrades[k];if(k==='lucky')return Math.floor(u.baseCost*Math.pow(2,this.feverTotalBought));return Math.floor(u.baseCost*Math.pow(2,u.level))},
 };
 
